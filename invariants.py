@@ -10,13 +10,6 @@ def is_valid_sort(original,
                   after,
                   cmp) -> bool:
 
-    counter = Counter(after)
-    print('\n', after)
-    print(counter)
-    print(len(counter))
-    counter2 = counter - counter
-    print(len(counter2))
-
     # Property 1: size of the lists must remain the same
     if len(original) != len(after):
         print("Length of lists don't match")
@@ -54,6 +47,19 @@ def is_valid_sort(original,
 def is_valid_toposort(original,
                       after,
                       edges) -> bool:
+
+    print("original: ", original)
+    print("after: ", after)
+
+    # Lengths are the same
+    # nodes are of type integer
+    # no duplicates of integers/nodes in an array
+    # Same nodes are in the lists
+    # Is in topological order, linear ordering of vertices such that for every directed edge (u, v), vertux u comes before v in the ordering
+    # Edges exist in list?
+    # no cycles, meaning can be topologically sorted
+
+
     # return False
     return True
 
