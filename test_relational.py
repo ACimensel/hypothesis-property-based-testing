@@ -1,5 +1,6 @@
+from collections import Counter
 from random import shuffle
-from hypothesis import given
+from hypothesis import given, example
 import hypothesis.strategies as st
 
 from relational import sortish, toposortish
@@ -18,6 +19,7 @@ from invariants import is_valid_sort, is_valid_toposort
 
 ###write custom case for each property, ex. where lengths don't match
 @given(st.lists(st.integers()))  ###Gives some list of integers, don't care about values
+# @example([])
 def test_sort_integers(integers):  ###Returns nothing
     original = integers[:]
     comparison = lambda x, y: x - y
@@ -68,5 +70,9 @@ def test_toposort(dag):
 
 
 if __name__ == "__main__":
-    d = [1, 2, 3]
-    print("car" < "cat")
+    d = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 18, 10, 10]
+    counter = Counter(d)
+    print("counter", counter)
+    print("counter_original.most_common: ", counter.most_common(1))
+    print("counter_original.most_common: ", counter.most_common(1)[0])
+    print("counter_original.most_common: ", counter.most_common(1)[0][1])
